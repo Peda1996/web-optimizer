@@ -21,8 +21,19 @@
     "qualityLevel": "Quality Level",
     "maxFileSize": "Max File Size (KB)",
     "targetSizeHint": "App calculates best quality to fit size. Processing will be slower.",
-    "resizeWidth": "Resize Width",
-    "resizeWidthPlaceholder": "Original"
+    "resizeWidth": "Max Width",
+    "resizeHeight": "Max Height",
+    "resizeWidthPlaceholder": "Original",
+    "resizeHeightPlaceholder": "Auto",
+    "presets": "Presets",
+    "presetCustom": "Custom",
+    "presetLow": "Economy",
+    "presetMedium": "Balanced",
+    "presetHigh": "High Quality",
+    "presetMax": "Maximum",
+    "fileNaming": "File Naming",
+    "prefix": "Prefix",
+    "suffix": "Suffix"
   },
   "privacy": {
     "title": "Privacy Secure",
@@ -41,7 +52,8 @@
     "action": "Action",
     "download": "Download",
     "downloadAll": "Download All",
-    "clear": "Clear"
+    "clear": "Clear",
+    "preview": "Preview"
   },
   "status": {
     "processing": "Processing",
@@ -67,5 +79,16 @@
     "madeBy": "Made with",
     "by": "by",
     "forProject": "for"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle theme"
+  },
+  "preview": {
+    "title": "Comparison",
+    "before": "Before",
+    "after": "After",
+    "close": "Close"
   }
 }

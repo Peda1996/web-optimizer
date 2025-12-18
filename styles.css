@@ -17,6 +17,19 @@
     background: #94a3b8;
 }
 
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
 /* Drop Zone Styles */
 .drop-zone {
     transition: all 0.3s ease;
@@ -27,6 +40,16 @@
     background-color: #f0f9ff;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%233B82F6FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     transform: scale(1.01);
+}
+
+/* Dark Mode Drop Zone */
+.dark .drop-zone {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23475569FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.dark .drop-zone.active {
+    background-color: #1e3a5f;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%233B82F6FF' stroke-width='3' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
 /* Processing Animation */
@@ -41,4 +64,184 @@
 
 .processing-pulse {
     animation: pulse-blue 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Dark Mode Theme Variables */
+.dark {
+    color-scheme: dark;
+}
+
+.dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Preview Modal */
+.preview-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.preview-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.preview-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.dark .preview-content {
+    background: #1e293b;
+}
+
+/* Image Comparison Slider */
+.comparison-container {
+    position: relative;
+    overflow: hidden;
+    cursor: ew-resize;
+}
+
+.comparison-image {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.comparison-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.comparison-before img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    max-width: none;
+}
+
+.comparison-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+.comparison-slider::before,
+.comparison-slider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.comparison-slider::before {
+    left: -14px;
+    box-shadow: -2px 0 4px rgba(0,0,0,0.3);
+}
+
+.comparison-slider::after {
+    right: -14px;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.3);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dark .theme-toggle {
+    background: #475569;
+}
+
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.dark .theme-toggle::after {
+    transform: translateX(20px);
+}
+
+/* Preset Button Styles */
+.preset-btn {
+    transition: all 0.2s;
+}
+
+.preset-btn.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.dark .preset-btn.active {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Input focus states for dark mode */
+.dark input:focus,
+.dark select:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }

@@ -21,8 +21,19 @@
     "qualityLevel": "Qualitätsstufe",
     "maxFileSize": "Max. Dateigröße (KB)",
     "targetSizeHint": "App berechnet beste Qualität für Zielgröße. Verarbeitung dauert länger.",
-    "resizeWidth": "Breite ändern",
-    "resizeWidthPlaceholder": "Original"
+    "resizeWidth": "Max. Breite",
+    "resizeHeight": "Max. Höhe",
+    "resizeWidthPlaceholder": "Original",
+    "resizeHeightPlaceholder": "Auto",
+    "presets": "Voreinstellungen",
+    "presetCustom": "Benutzerdefiniert",
+    "presetLow": "Sparsam",
+    "presetMedium": "Ausgewogen",
+    "presetHigh": "Hohe Qualität",
+    "presetMax": "Maximum",
+    "fileNaming": "Dateinamen",
+    "prefix": "Präfix",
+    "suffix": "Suffix"
   },
   "privacy": {
     "title": "Datenschutz gesichert",
@@ -41,7 +52,8 @@
     "action": "Aktion",
     "download": "Herunterladen",
     "downloadAll": "Alle herunterladen",
-    "clear": "Leeren"
+    "clear": "Leeren",
+    "preview": "Vorschau"
   },
   "status": {
     "processing": "Verarbeitung",
@@ -67,5 +79,16 @@
     "madeBy": "Erstellt mit",
     "by": "von",
     "forProject": "für"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "toggle": "Thema wechseln"
+  },
+  "preview": {
+    "title": "Vergleich",
+    "before": "Vorher",
+    "after": "Nachher",
+    "close": "Schließen"
   }
 }

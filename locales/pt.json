@@ -1,0 +1,89 @@
+{
+  "app": {
+    "title": "Web Optimizer Pro",
+    "subtitle": "Processador de imagens local",
+    "pageTitle": "Otimizador e Conversor de Imagens Web Pro"
+  },
+  "header": {
+    "clearList": "Limpar lista",
+    "downloadZip": "Baixar ZIP"
+  },
+  "settings": {
+    "title": "Configuração",
+    "outputFormat": "Formato de saída",
+    "formatWebp": "WebP (Recomendado)",
+    "formatAvif": "AVIF (Melhor compressão)",
+    "formatJpeg": "JPEG (Universal)",
+    "formatPng": "PNG (Sem perdas)",
+    "optimizationMode": "Modo de otimização",
+    "modeQuality": "Por qualidade",
+    "modeSize": "Tamanho alvo",
+    "qualityLevel": "Nível de qualidade",
+    "maxFileSize": "Tamanho máx (KB)",
+    "targetSizeHint": "O app calcula a melhor qualidade para o tamanho. Processamento mais lento.",
+    "resizeWidth": "Largura máxima",
+    "resizeHeight": "Altura máxima",
+    "resizeWidthPlaceholder": "Original",
+    "resizeHeightPlaceholder": "Auto",
+    "presets": "Predefinições",
+    "presetCustom": "Personalizado",
+    "presetLow": "Econômico",
+    "presetMedium": "Equilibrado",
+    "presetHigh": "Alta qualidade",
+    "presetMax": "Máximo",
+    "fileNaming": "Nomes de arquivo",
+    "prefix": "Prefixo",
+    "suffix": "Sufixo"
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "description": "Processamento 100% local. Suas imagens nunca saem deste dispositivo."
+  },
+  "dropzone": {
+    "title": "Arraste imagens aqui",
+    "description": "Arraste e solte ou clique para procurar.",
+    "formats": "Suporta JPG, PNG, WEBP, AVIF, BMP, GIF"
+  },
+  "results": {
+    "title": "Resultados",
+    "fileInfo": "Arquivo",
+    "state": "Estado",
+    "optimization": "Otimização",
+    "action": "Ação",
+    "download": "Baixar",
+    "downloadAll": "Baixar tudo",
+    "clear": "Limpar",
+    "preview": "Visualizar"
+  },
+  "status": {
+    "processing": "Processando",
+    "tuning": "Ajustando...",
+    "ready": "Pronto",
+    "failed": "Falhou"
+  },
+  "stats": {
+    "original": "Original",
+    "total": "Total:",
+    "saved": "Economizado",
+    "added": "Adicionado"
+  },
+  "alerts": {
+    "pngTargetSize": "Otimização por tamanho não disponível para PNG. Alterado para JPEG."
+  },
+  "footer": {
+    "madeBy": "Feito com",
+    "by": "por",
+    "forProject": "para"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "toggle": "Alternar tema"
+  },
+  "preview": {
+    "title": "Comparação",
+    "before": "Antes",
+    "after": "Depois",
+    "close": "Fechar"
+  }
+}
