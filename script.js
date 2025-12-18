@@ -500,8 +500,8 @@ function handleFiles(files) {
 
 async function processFile(file) {
     // Validation - support as many formats as possible
-    const supportedTypes = /^image\/(jpeg|png|webp|gif|bmp|tiff|avif|heic|heif|svg\+xml|x-icon|vnd\.microsoft\.icon|ico|x-ms-bmp)/;
-    const supportedExtensions = /\.(jpg|jpeg|jpe|jfif|pjpeg|pjp|png|webp|avif|gif|bmp|dib|tif|tiff|ico|cur|svg|heic|heif)$/i;
+    const supportedTypes = /^image\/(jpeg|png|webp|gif|bmp|tiff|avif|heic|heif|svg\+xml|x-icon|vnd\.microsoft\.icon|ico|x-ms-bmp|jp2|jpx|jpm|jxl|apng|x-portable-pixmap|x-portable-graymap|x-portable-bitmap|x-portable-anymap|x-pcx|x-tga|x-rgb)/;
+    const supportedExtensions = /\.(jpg|jpeg|jpe|jfif|pjpeg|pjp|png|webp|avif|gif|bmp|dib|tif|tiff|ico|cur|svg|heic|heif|jp2|j2k|jpf|jpx|jpm|jxl|apng|pcx|tga|ppm|pgm|pbm|pnm|xbm|xpm|wbmp|raw|dng|nef|cr2|arw|orf|rw2)$/i;
 
     if (!file.type.match(supportedTypes) && !file.name.match(supportedExtensions)) {
         appState.processing.completed++;

@@ -42,7 +42,7 @@
   "dropzone": {
     "title": "Trascina le immagini qui",
     "description": "Trascina e rilascia o clicca per sfogliare.",
-    "formats": "Supporta JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, ICO, HEIC"
+    "formats": "Supporta JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, ICO, HEIC, JPEG 2000, JPEG XL, RAW"
   },
   "results": {
     "title": "Risultati",
