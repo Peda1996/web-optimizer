@@ -102,8 +102,12 @@ function checkPngCompatibility() {
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(evt => {
     dropZone.addEventListener(evt, (e) => { e.preventDefault(); e.stopPropagation(); });
 });
-['dragenter', 'dragover'].forEach(evt => dropZone.classList.add('active'));
-['dragleave', 'drop'].forEach(evt => dropZone.classList.remove('active'));
+['dragenter', 'dragover'].forEach(evt => {
+    dropZone.addEventListener(evt, () => dropZone.classList.add('active'));
+});
+['dragleave', 'drop'].forEach(evt => {
+    dropZone.addEventListener(evt, () => dropZone.classList.remove('active'));
+});
 
 dropZone.addEventListener('drop', (e) => handleFiles(e.dataTransfer.files));
 fileInput.addEventListener('change', (e) => handleFiles(e.target.files));

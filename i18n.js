@@ -5,6 +5,34 @@ const i18n = {
     translations: {},
     supportedLangs: ['en', 'de'],
 
+    // Inline fallback translations (for file:// protocol)
+    fallbackTranslations: {
+        en: {
+            app: { title: "Web Optimizer Pro", subtitle: "Advanced Local Image Processor", pageTitle: "Web Image Optimizer & Converter Pro" },
+            header: { clearList: "Clear List", downloadZip: "Download ZIP" },
+            settings: { title: "Configuration", outputFormat: "Output Format", formatWebp: "WebP (Recommended)", formatAvif: "AVIF (Best Compression)", formatJpeg: "JPEG (Universal)", formatPng: "PNG (Lossless)", optimizationMode: "Optimization Mode", modeQuality: "By Quality", modeSize: "Target Size", qualityLevel: "Quality Level", maxFileSize: "Max File Size (KB)", targetSizeHint: "App calculates best quality to fit size. Processing will be slower.", resizeWidth: "Resize Width", resizeWidthPlaceholder: "Original" },
+            privacy: { title: "Privacy Secure", description: "Processing is 100% local. Your images never leave this device." },
+            dropzone: { title: "Drop images here", description: "Drag & drop files or click to browse.", formats: "Supports JPG, PNG, WEBP, AVIF, BMP, GIF" },
+            results: { title: "Results", fileInfo: "File Info", state: "State", optimization: "Optimization", action: "Action", download: "Download", downloadAll: "Download All", clear: "Clear" },
+            status: { processing: "Processing", tuning: "Tuning...", ready: "Ready", failed: "Failed" },
+            stats: { original: "Original", total: "Total:", saved: "Saved", added: "Added" },
+            alerts: { pngTargetSize: "Target size optimization is not available for PNG (Lossless). Switched to JPEG." },
+            footer: { madeBy: "Made with", by: "by", forProject: "for" }
+        },
+        de: {
+            app: { title: "Web Optimizer Pro", subtitle: "Lokale Bildverarbeitung", pageTitle: "Web Bild-Optimierer & Konverter Pro" },
+            header: { clearList: "Liste leeren", downloadZip: "ZIP herunterladen" },
+            settings: { title: "Einstellungen", outputFormat: "Ausgabeformat", formatWebp: "WebP (Empfohlen)", formatAvif: "AVIF (Beste Kompression)", formatJpeg: "JPEG (Universal)", formatPng: "PNG (Verlustfrei)", optimizationMode: "Optimierungsmodus", modeQuality: "Nach Qualität", modeSize: "Zielgröße", qualityLevel: "Qualitätsstufe", maxFileSize: "Max. Dateigröße (KB)", targetSizeHint: "App berechnet beste Qualität für Zielgröße. Verarbeitung dauert länger.", resizeWidth: "Breite ändern", resizeWidthPlaceholder: "Original" },
+            privacy: { title: "Datenschutz gesichert", description: "Verarbeitung erfolgt 100% lokal. Ihre Bilder verlassen dieses Gerät nicht." },
+            dropzone: { title: "Bilder hier ablegen", description: "Dateien hierher ziehen oder klicken zum Durchsuchen.", formats: "Unterstützt JPG, PNG, WEBP, AVIF, BMP, GIF" },
+            results: { title: "Ergebnisse", fileInfo: "Dateiinfo", state: "Status", optimization: "Optimierung", action: "Aktion", download: "Herunterladen", downloadAll: "Alle herunterladen", clear: "Leeren" },
+            status: { processing: "Verarbeitung", tuning: "Anpassen...", ready: "Fertig", failed: "Fehlgeschlagen" },
+            stats: { original: "Original", total: "Gesamt:", saved: "Gespart", added: "Hinzugefügt" },
+            alerts: { pngTargetSize: "Zielgrößen-Optimierung ist für PNG (Verlustfrei) nicht verfügbar. Auf JPEG umgeschaltet." },
+            footer: { madeBy: "Erstellt mit", by: "von", forProject: "für" }
+        }
+    },
+
     async init() {
         // Detect browser language or use stored preference
         const stored = localStorage.getItem('app-language');
@@ -27,11 +55,9 @@ const i18n = {
             if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
             this.translations = await response.json();
         } catch (error) {
-            console.error('Error loading translations:', error);
-            // Fallback to English
-            if (lang !== 'en') {
-                await this.loadTranslations('en');
-            }
+            console.warn('Could not fetch translations, using fallback:', error.message);
+            // Use inline fallback translations
+            this.translations = this.fallbackTranslations[lang] || this.fallbackTranslations['en'];
         }
     },
 
