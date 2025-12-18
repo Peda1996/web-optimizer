@@ -42,7 +42,7 @@
   "dropzone": {
     "title": "Arraste imagens aqui",
     "description": "Arraste e solte ou clique para procurar.",
-    "formats": "Suporta JPG, PNG, WEBP, AVIF, BMP, GIF"
+    "formats": "Suporta JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, ICO, HEIC"
   },
   "results": {
     "title": "Resultados",

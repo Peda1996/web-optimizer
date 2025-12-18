@@ -48,7 +48,7 @@
   "dropzone": {
     "title": "Bilder hier ablegen",
     "description": "Dateien hierher ziehen oder klicken zum Durchsuchen.",
-    "formats": "Unterstützt JPG, PNG, WEBP, AVIF, BMP, GIF",
+    "formats": "Unterstützt JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, ICO, HEIC",
     "hint": "Sie können mehrere Dateien gleichzeitig auswählen"
   },
   "results": {

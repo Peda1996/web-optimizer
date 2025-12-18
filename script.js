@@ -499,13 +499,14 @@ function handleFiles(files) {
 }
 
 async function processFile(file) {
-    // Validation
-    if (!file.type.match(/^image\/(jpeg|png|webp|gif|bmp|tiff|avif|heic)/)) {
-        if(!file.name.match(/\.(jpg|jpeg|png|webp|avif|gif)$/i)) {
-            appState.processing.completed++;
-            checkProcessingComplete();
-            return;
-        }
+    // Validation - support as many formats as possible
+    const supportedTypes = /^image\/(jpeg|png|webp|gif|bmp|tiff|avif|heic|heif|svg\+xml|x-icon|vnd\.microsoft\.icon|ico|x-ms-bmp)/;
+    const supportedExtensions = /\.(jpg|jpeg|jpe|jfif|pjpeg|pjp|png|webp|avif|gif|bmp|dib|tif|tiff|ico|cur|svg|heic|heif)$/i;
+
+    if (!file.type.match(supportedTypes) && !file.name.match(supportedExtensions)) {
+        appState.processing.completed++;
+        checkProcessingComplete();
+        return;
     }
 
     const id = Math.random().toString(36).substr(2, 9);

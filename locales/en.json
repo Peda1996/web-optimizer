@@ -48,7 +48,7 @@
   "dropzone": {
     "title": "Drop images here",
     "description": "Drag & drop files or click to browse.",
-    "formats": "Supports JPG, PNG, WEBP, AVIF, BMP, GIF",
+    "formats": "Supports JPG, PNG, WebP, AVIF, GIF, BMP, TIFF, SVG, ICO, HEIC",
     "hint": "You can select multiple files at once"
   },
   "results": {
