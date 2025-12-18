@@ -78,7 +78,7 @@ const defaultSettings = {
     maxWidth: '',
     maxHeight: '',
     prefix: '',
-    suffix: '_optimized',
+    suffix: '',
     preset: 'medium'
 };
 
@@ -172,7 +172,7 @@ function loadSettings() {
             maxWidthInput.value = settings.maxWidth || '';
             maxHeightInput.value = settings.maxHeight || '';
             prefixInput.value = settings.prefix || '';
-            suffixInput.value = settings.suffix || defaultSettings.suffix;
+            suffixInput.value = settings.suffix !== undefined ? settings.suffix : defaultSettings.suffix;
             appState.currentPreset = settings.preset || defaultSettings.preset;
 
             if (settings.mode === 'size') {
