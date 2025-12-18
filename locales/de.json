@@ -15,25 +15,31 @@
     "formatAvif": "AVIF (Beste Kompression)",
     "formatJpeg": "JPEG (Universal)",
     "formatPng": "PNG (Verlustfrei)",
+    "formatHint": "WebP bietet das beste Verhältnis von Qualität und Dateigröße.",
     "optimizationMode": "Optimierungsmodus",
     "modeQuality": "Nach Qualität",
     "modeSize": "Zielgröße",
     "qualityLevel": "Qualitätsstufe",
+    "qualityHint": "Höher = bessere Qualität, größere Datei. 80% ist ideal für die meisten Anwendungen.",
     "maxFileSize": "Max. Dateigröße (KB)",
     "targetSizeHint": "App berechnet beste Qualität für Zielgröße. Verarbeitung dauert länger.",
     "resizeWidth": "Max. Breite",
     "resizeHeight": "Max. Höhe",
     "resizeWidthPlaceholder": "Original",
     "resizeHeightPlaceholder": "Auto",
-    "presets": "Voreinstellungen",
+    "resizeHint": "Leer lassen für Originalgröße. Seitenverhältnis wird beibehalten.",
+    "presets": "Schnellauswahl",
     "presetCustom": "Benutzerdefiniert",
     "presetLow": "Sparsam",
     "presetMedium": "Ausgewogen",
-    "presetHigh": "Hohe Qualität",
-    "presetMax": "Maximum",
+    "presetHigh": "Hoch",
+    "presetMax": "Max",
+    "presetHint": "Klicken Sie auf eine Voreinstellung für empfohlene Einstellungen.",
     "fileNaming": "Dateinamen",
     "prefix": "Präfix",
-    "suffix": "Suffix"
+    "suffix": "Suffix",
+    "fileNamingHint": "Text vor oder nach dem Dateinamen hinzufügen.",
+    "resetDefaults": "Zurücksetzen"
   },
   "privacy": {
     "title": "Datenschutz gesichert",
@@ -42,7 +48,8 @@
   "dropzone": {
     "title": "Bilder hier ablegen",
     "description": "Dateien hierher ziehen oder klicken zum Durchsuchen.",
-    "formats": "Unterstützt JPG, PNG, WEBP, AVIF, BMP, GIF"
+    "formats": "Unterstützt JPG, PNG, WEBP, AVIF, BMP, GIF",
+    "hint": "Sie können mehrere Dateien gleichzeitig auswählen"
   },
   "results": {
     "title": "Ergebnisse",
@@ -70,6 +77,27 @@
   "alerts": {
     "pngTargetSize": "Zielgrößen-Optimierung ist für PNG (Verlustfrei) nicht verfügbar. Auf JPEG umgeschaltet."
   },
+  "confirm": {
+    "clearTitle": "Alle Bilder löschen?",
+    "clearMessage": "Dies entfernt alle verarbeiteten Bilder aus der Liste.",
+    "clearConfirm": "Ja, alle löschen",
+    "clearCancel": "Abbrechen"
+  },
+  "toast": {
+    "settingsSaved": "Einstellungen gespeichert",
+    "settingsReset": "Einstellungen zurückgesetzt",
+    "processingComplete": "Verarbeitung abgeschlossen!",
+    "processingCompleteMulti": "{count} Bilder verarbeitet",
+    "downloadStarted": "Download gestartet",
+    "imageCopied": "Bild in Zwischenablage kopiert",
+    "errorOccurred": "Ein Fehler ist aufgetreten",
+    "formatWarning": "AVIF wird möglicherweise nicht in allen Browsern unterstützt",
+    "allCleared": "Alle Bilder gelöscht"
+  },
+  "progress": {
+    "processing": "Verarbeite {current} von {total}...",
+    "complete": "Alles fertig!"
+  },
   "language": {
     "label": "Sprache",
     "en": "English",
@@ -90,5 +118,23 @@
     "before": "Vorher",
     "after": "Nachher",
     "close": "Schließen"
+  },
+  "shortcuts": {
+    "title": "Tastenkürzel",
+    "upload": "Dateien hochladen",
+    "download": "ZIP herunterladen",
+    "clear": "Liste leeren",
+    "theme": "Thema wechseln",
+    "escape": "Modal schließen"
+  },
+  "tooltips": {
+    "formatWebp": "Ideal für Web - kleine Dateien mit guter Qualität",
+    "formatAvif": "Neuestes Format - kleinste Dateien aber langsamer",
+    "formatJpeg": "Funktioniert überall - gut für Fotos",
+    "formatPng": "Kein Qualitätsverlust - ideal für Grafiken/Logos",
+    "presetLow": "50% Qualität - kleinste Dateien",
+    "presetMedium": "80% Qualität - gute Balance",
+    "presetHigh": "92% Qualität - fast perfekt",
+    "presetMax": "100% PNG - kein Verlust"
   }
 }

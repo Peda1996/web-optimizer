@@ -15,25 +15,31 @@
     "formatAvif": "AVIF (Best Compression)",
     "formatJpeg": "JPEG (Universal)",
     "formatPng": "PNG (Lossless)",
+    "formatHint": "WebP offers the best balance of quality and file size for web use.",
     "optimizationMode": "Optimization Mode",
     "modeQuality": "By Quality",
     "modeSize": "Target Size",
     "qualityLevel": "Quality Level",
+    "qualityHint": "Higher = better quality, larger file. 80% is ideal for most uses.",
     "maxFileSize": "Max File Size (KB)",
     "targetSizeHint": "App calculates best quality to fit size. Processing will be slower.",
     "resizeWidth": "Max Width",
     "resizeHeight": "Max Height",
     "resizeWidthPlaceholder": "Original",
     "resizeHeightPlaceholder": "Auto",
-    "presets": "Presets",
+    "resizeHint": "Leave empty to keep original dimensions. Aspect ratio is preserved.",
+    "presets": "Quick Presets",
     "presetCustom": "Custom",
     "presetLow": "Economy",
     "presetMedium": "Balanced",
-    "presetHigh": "High Quality",
-    "presetMax": "Maximum",
+    "presetHigh": "High",
+    "presetMax": "Max",
+    "presetHint": "Click a preset to quickly apply recommended settings.",
     "fileNaming": "File Naming",
     "prefix": "Prefix",
-    "suffix": "Suffix"
+    "suffix": "Suffix",
+    "fileNamingHint": "Add text before or after the original filename.",
+    "resetDefaults": "Reset"
   },
   "privacy": {
     "title": "Privacy Secure",
@@ -42,7 +48,8 @@
   "dropzone": {
     "title": "Drop images here",
     "description": "Drag & drop files or click to browse.",
-    "formats": "Supports JPG, PNG, WEBP, AVIF, BMP, GIF"
+    "formats": "Supports JPG, PNG, WEBP, AVIF, BMP, GIF",
+    "hint": "You can select multiple files at once"
   },
   "results": {
     "title": "Results",
@@ -70,6 +77,27 @@
   "alerts": {
     "pngTargetSize": "Target size optimization is not available for PNG (Lossless). Switched to JPEG."
   },
+  "confirm": {
+    "clearTitle": "Clear all images?",
+    "clearMessage": "This will remove all processed images from the list.",
+    "clearConfirm": "Yes, clear all",
+    "clearCancel": "Cancel"
+  },
+  "toast": {
+    "settingsSaved": "Settings saved",
+    "settingsReset": "Settings reset to defaults",
+    "processingComplete": "Processing complete!",
+    "processingCompleteMulti": "{count} images processed",
+    "downloadStarted": "Download started",
+    "imageCopied": "Image copied to clipboard",
+    "errorOccurred": "An error occurred",
+    "formatWarning": "AVIF may not be supported in all browsers",
+    "allCleared": "All images cleared"
+  },
+  "progress": {
+    "processing": "Processing {current} of {total}...",
+    "complete": "All done!"
+  },
   "language": {
     "label": "Language",
     "en": "English",
@@ -90,5 +118,23 @@
     "before": "Before",
     "after": "After",
     "close": "Close"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "upload": "Upload files",
+    "download": "Download ZIP",
+    "clear": "Clear list",
+    "theme": "Toggle theme",
+    "escape": "Close modal"
+  },
+  "tooltips": {
+    "formatWebp": "Best for web - small files with great quality",
+    "formatAvif": "Newest format - smallest files but slower",
+    "formatJpeg": "Works everywhere - good for photos",
+    "formatPng": "No quality loss - best for graphics/logos",
+    "presetLow": "50% quality - smallest files",
+    "presetMedium": "80% quality - great balance",
+    "presetHigh": "92% quality - near-perfect",
+    "presetMax": "100% PNG - no loss at all"
   }
 }
