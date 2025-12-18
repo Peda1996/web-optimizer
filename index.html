@@ -366,17 +366,20 @@
 
     <!-- Template -->
     <template id="listItemTemplate">
-        <div class="grid grid-cols-12 px-4 py-4 items-center hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors group">
-            <div class="col-span-5 md:col-span-4 flex items-center gap-3 overflow-hidden">
+        <div class="grid grid-cols-12 px-4 py-3 items-center hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors group border-b border-gray-100 dark:border-slate-700/50 last:border-b-0">
+            <!-- File info -->
+            <div class="col-span-6 md:col-span-4 flex items-center gap-3 overflow-hidden">
                 <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-slate-700 flex-shrink-0 overflow-hidden border border-gray-200 dark:border-slate-600 relative">
                     <img class="w-full h-full object-cover result-thumb" src="" alt="" loading="lazy">
                 </div>
                 <div class="min-w-0">
                     <p class="text-sm font-medium text-gray-900 dark:text-white truncate result-name">filename.jpg</p>
                     <p class="text-xs text-gray-500 dark:text-gray-400 truncate result-meta">Original: 2.4MB</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 result-timestamp"></p>
                 </div>
             </div>
 
+            <!-- Status -->
             <div class="col-span-3 md:col-span-2 flex justify-center">
                 <span class="status-badge inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300">
                     <svg class="animate-spin -ml-0.5 mr-1.5 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -387,20 +390,25 @@
                 </span>
             </div>
 
-            <div class="col-span-4 md:col-span-3 text-right">
+            <!-- Size/savings -->
+            <div class="col-span-3 md:col-span-2 text-right">
                 <p class="text-sm font-bold text-gray-900 dark:text-white result-size">...</p>
                 <p class="text-xs text-green-600 dark:text-green-400 font-medium result-savings">...</p>
             </div>
 
-            <div class="col-span-12 md:col-span-3 mt-3 md:mt-0 flex justify-end gap-2 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
-                <button class="preview-btn text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium flex items-center gap-1 opacity-50 pointer-events-none transition-opacity bg-gray-100 dark:bg-slate-700 px-3 py-1.5 rounded-md" aria-label="Preview comparison">
+            <!-- Actions - always visible -->
+            <div class="col-span-12 md:col-span-4 mt-2 md:mt-0 flex justify-end items-center gap-2">
+                <button class="preview-btn text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium flex items-center gap-1 opacity-50 pointer-events-none transition-all bg-gray-100 dark:bg-slate-700 px-3 py-1.5 rounded-md hover:bg-gray-200 dark:hover:bg-slate-600" aria-label="Preview comparison">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                    <span data-i18n="results.preview">Preview</span>
+                    <span class="hidden sm:inline" data-i18n="results.preview">Preview</span>
                 </button>
-                <a href="#" class="download-link text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium flex items-center gap-1 opacity-50 pointer-events-none transition-opacity bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-md" aria-label="Download optimized image">
+                <a href="#" class="download-link text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium flex items-center gap-1 opacity-50 pointer-events-none transition-all bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-md hover:bg-blue-100 dark:hover:bg-blue-900/50" aria-label="Download optimized image">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                    <span data-i18n="results.download">Download</span>
+                    <span class="hidden sm:inline" data-i18n="results.download">Download</span>
                 </a>
+                <button class="delete-btn text-gray-400 hover:text-red-600 dark:text-gray-500 dark:hover:text-red-400 p-1.5 rounded-md hover:bg-red-50 dark:hover:bg-red-900/20 transition-all" aria-label="Remove from list" data-i18n-title="results.remove">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
         </div>
     </template>

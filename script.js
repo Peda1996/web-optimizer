@@ -614,6 +614,13 @@ async function optimizeToSize(canvas, format, targetBytes) {
 }
 
 // --- UI Helpers ---
+function formatTimestamp(date) {
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
+}
+
 function createListItem(id, file, originalUrl) {
     const template = document.getElementById('listItemTemplate');
     const clone = template.content.cloneNode(true);
@@ -626,6 +633,10 @@ function createListItem(id, file, originalUrl) {
     el.querySelector('.result-thumb').src = originalUrl;
     el.querySelector('.status-text').textContent = i18n.t('status.processing');
 
+    // Add timestamp
+    const timestamp = new Date();
+    el.querySelector('.result-timestamp').textContent = formatTimestamp(timestamp);
+
     // Apply translations
     const downloadText = el.querySelector('[data-i18n="results.download"]');
     if (downloadText) downloadText.textContent = i18n.t('results.download');
@@ -633,7 +644,49 @@ function createListItem(id, file, originalUrl) {
     const previewText = el.querySelector('[data-i18n="results.preview"]');
     if (previewText) previewText.textContent = i18n.t('results.preview');
 
+    // Delete button handler
+    const deleteBtn = el.querySelector('.delete-btn');
+    deleteBtn.title = i18n.t('results.remove');
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        deleteItem(id);
+    });
+
     resultsList.insertBefore(clone, resultsList.firstChild);
+}
+
+function deleteItem(id) {
+    // Remove from DOM
+    const el = document.getElementById(`item-${id}`);
+    if (el) {
+        el.classList.add('animate-fade-out');
+        setTimeout(() => el.remove(), 200);
+    }
+
+    // Remove from state
+    const fileIndex = appState.files.findIndex(f => f.id === id);
+    if (fileIndex !== -1) {
+        const file = appState.files[fileIndex];
+
+        // Update totals
+        appState.totalOriginal -= file.originalSize;
+        appState.totalNew -= file.blob.size;
+
+        // Revoke URLs
+        if (file.originalUrl) URL.revokeObjectURL(file.originalUrl);
+        if (file.optimizedUrl) URL.revokeObjectURL(file.optimizedUrl);
+
+        // Remove from array
+        appState.files.splice(fileIndex, 1);
+    }
+
+    // Update stats
+    updateStats();
+
+    // Hide output section if no files left
+    if (appState.files.length === 0) {
+        outputSection.classList.add('hidden');
+    }
 }
 
 function updateStatus(id, state) {

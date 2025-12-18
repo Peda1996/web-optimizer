@@ -53,7 +53,8 @@
     "download": "Baixar",
     "downloadAll": "Baixar tudo",
     "clear": "Limpar",
-    "preview": "Visualizar"
+    "preview": "Visualizar",
+    "remove": "Remover"
   },
   "status": {
     "processing": "Processando",

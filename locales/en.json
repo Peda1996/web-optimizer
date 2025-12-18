@@ -60,7 +60,8 @@
     "download": "Download",
     "downloadAll": "Download All",
     "clear": "Clear",
-    "preview": "Preview"
+    "preview": "Preview",
+    "remove": "Remove"
   },
   "status": {
     "processing": "Processing",

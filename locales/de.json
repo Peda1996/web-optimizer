@@ -60,7 +60,8 @@
     "download": "Herunterladen",
     "downloadAll": "Alle herunterladen",
     "clear": "Leeren",
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "remove": "Entfernen"
   },
   "status": {
     "processing": "Verarbeitung",
