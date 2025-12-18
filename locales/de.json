@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Web Optimizer Pro",
+    "subtitle": "Lokale Bildverarbeitung",
+    "pageTitle": "Web Bild-Optimierer & Konverter Pro"
+  },
+  "header": {
+    "clearList": "Liste leeren",
+    "downloadZip": "ZIP herunterladen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "outputFormat": "Ausgabeformat",
+    "formatWebp": "WebP (Empfohlen)",
+    "formatAvif": "AVIF (Beste Kompression)",
+    "formatJpeg": "JPEG (Universal)",
+    "formatPng": "PNG (Verlustfrei)",
+    "optimizationMode": "Optimierungsmodus",
+    "modeQuality": "Nach Qualität",
+    "modeSize": "Zielgröße",
+    "qualityLevel": "Qualitätsstufe",
+    "maxFileSize": "Max. Dateigröße (KB)",
+    "targetSizeHint": "App berechnet beste Qualität für Zielgröße. Verarbeitung dauert länger.",
+    "resizeWidth": "Breite ändern",
+    "resizeWidthPlaceholder": "Original"
+  },
+  "privacy": {
+    "title": "Datenschutz gesichert",
+    "description": "Verarbeitung erfolgt 100% lokal. Ihre Bilder verlassen dieses Gerät nicht."
+  },
+  "dropzone": {
+    "title": "Bilder hier ablegen",
+    "description": "Dateien hierher ziehen oder klicken zum Durchsuchen.",
+    "formats": "Unterstützt JPG, PNG, WEBP, AVIF, BMP, GIF"
+  },
+  "results": {
+    "title": "Ergebnisse",
+    "fileInfo": "Dateiinfo",
+    "state": "Status",
+    "optimization": "Optimierung",
+    "action": "Aktion",
+    "download": "Herunterladen",
+    "downloadAll": "Alle herunterladen",
+    "clear": "Leeren"
+  },
+  "status": {
+    "processing": "Verarbeitung",
+    "tuning": "Anpassen...",
+    "ready": "Fertig",
+    "failed": "Fehlgeschlagen"
+  },
+  "stats": {
+    "original": "Original",
+    "total": "Gesamt:",
+    "saved": "Gespart",
+    "added": "Hinzugefügt"
+  },
+  "alerts": {
+    "pngTargetSize": "Zielgrößen-Optimierung ist für PNG (Verlustfrei) nicht verfügbar. Auf JPEG umgeschaltet."
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "footer": {
+    "madeBy": "Erstellt mit",
+    "by": "von",
+    "forProject": "für"
+  }
+}

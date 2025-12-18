@@ -25,12 +25,27 @@ const qualityRange = document.getElementById('qualityRange');
 const qualityValue = document.getElementById('qualityValue');
 const targetSizeInput = document.getElementById('targetSizeInput');
 
+// Language selector
+const langSelect = document.getElementById('langSelect');
+
 let appState = {
     mode: 'quality', // 'quality' or 'size'
     files: [], // Array of {id, name, blob, originalSize}
     totalOriginal: 0,
     totalNew: 0
 };
+
+// --- Initialize i18n ---
+document.addEventListener('DOMContentLoaded', async () => {
+    await i18n.init();
+});
+
+// Language selector change
+langSelect.addEventListener('change', async (e) => {
+    await i18n.setLanguage(e.target.value);
+    // Update dynamic content that's already rendered
+    updateStats();
+});
 
 // --- Event Listeners: UI Logic ---
 
@@ -78,7 +93,7 @@ formatSelect.addEventListener('change', (e) => {
 function checkPngCompatibility() {
     const isPng = formatSelect.value === 'image/png';
     if (isPng && appState.mode === 'size') {
-        alert('Target size optimization is not available for PNG (Lossless). Switched to JPEG.');
+        alert(i18n.t('alerts.pngTargetSize'));
         formatSelect.value = 'image/jpeg';
     }
 }
@@ -167,7 +182,7 @@ async function processFile(file) {
 
     } catch (err) {
         console.error(err);
-        markError(id, "Failed");
+        markError(id, i18n.t('status.failed'));
     }
 }
 
@@ -211,8 +226,15 @@ function createListItem(id, file) {
     el.id = `item-${id}`;
 
     el.querySelector('.result-name').textContent = file.name;
-    el.querySelector('.result-meta').textContent = `Original: ${formatBytes(file.size)}`;
+    el.querySelector('.result-meta').textContent = `${i18n.t('stats.original')}: ${formatBytes(file.size)}`;
     el.querySelector('.result-thumb').src = URL.createObjectURL(file);
+    el.querySelector('.status-text').textContent = i18n.t('status.processing');
+
+    // Apply translations to template elements
+    const downloadText = el.querySelector('[data-i18n="results.download"]');
+    if (downloadText) {
+        downloadText.textContent = i18n.t('results.download');
+    }
 
     resultsList.insertBefore(clone, resultsList.firstChild);
 }
@@ -223,8 +245,8 @@ function updateStatus(id, state) {
     const badge = el.querySelector('.status-badge');
 
     if (state === 'calculating') {
-        badge.innerHTML = `<svg class="animate-spin -ml-0.5 mr-1.5 h-3 w-3 text-purple-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Tuning...`;
-        badge.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800';
+        badge.innerHTML = `<svg class="animate-spin -ml-0.5 mr-1.5 h-3 w-3 text-purple-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg><span class="status-text">${i18n.t('status.tuning')}</span>`;
+        badge.className = 'status-badge inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800';
     }
 }
 
@@ -245,11 +267,11 @@ function handleSuccess(id, original, blob, format, w, h) {
     updateStats();
 
     // Update UI
-    el.querySelector('.result-meta').textContent = `Original: ${formatBytes(original.size)} • ${w}x${h}px`;
+    el.querySelector('.result-meta').textContent = `${i18n.t('stats.original')}: ${formatBytes(original.size)} • ${w}x${h}px`;
 
     const badge = el.querySelector('.status-badge');
-    badge.textContent = 'Ready';
-    badge.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800';
+    badge.innerHTML = `<span class="status-text">${i18n.t('status.ready')}</span>`;
+    badge.className = 'status-badge inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800';
 
     el.querySelector('.result-size').textContent = formatBytes(blob.size);
 
@@ -277,8 +299,8 @@ function markError(id, msg) {
     const el = document.getElementById(`item-${id}`);
     if (!el) return;
     const badge = el.querySelector('.status-badge');
-    badge.textContent = msg;
-    badge.className = 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800';
+    badge.innerHTML = `<span class="status-text">${msg}</span>`;
+    badge.className = 'status-badge inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800';
 }
 
 function updateStats() {
@@ -291,8 +313,8 @@ function updateStats() {
 
     if (appState.totalOriginal > 0) {
         const diff = appState.totalOriginal - appState.totalNew;
-        const sign = diff > 0 ? 'Saved' : 'Added';
-        totalSavedInfo.innerHTML = `<span class="hidden md:inline">Total: </span><span class="font-bold ${diff > 0 ? 'text-green-600' : 'text-gray-600'}">${sign} ${formatBytes(Math.abs(diff))}</span>`;
+        const sign = diff > 0 ? i18n.t('stats.saved') : i18n.t('stats.added');
+        totalSavedInfo.innerHTML = `<span class="hidden md:inline">${i18n.t('stats.total')} </span><span class="font-bold ${diff > 0 ? 'text-green-600' : 'text-gray-600'}">${sign} ${formatBytes(Math.abs(diff))}</span>`;
     } else {
         totalSavedInfo.textContent = '';
     }

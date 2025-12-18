@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Web Optimizer Pro",
+    "subtitle": "Advanced Local Image Processor",
+    "pageTitle": "Web Image Optimizer & Converter Pro"
+  },
+  "header": {
+    "clearList": "Clear List",
+    "downloadZip": "Download ZIP"
+  },
+  "settings": {
+    "title": "Configuration",
+    "outputFormat": "Output Format",
+    "formatWebp": "WebP (Recommended)",
+    "formatAvif": "AVIF (Best Compression)",
+    "formatJpeg": "JPEG (Universal)",
+    "formatPng": "PNG (Lossless)",
+    "optimizationMode": "Optimization Mode",
+    "modeQuality": "By Quality",
+    "modeSize": "Target Size",
+    "qualityLevel": "Quality Level",
+    "maxFileSize": "Max File Size (KB)",
+    "targetSizeHint": "App calculates best quality to fit size. Processing will be slower.",
+    "resizeWidth": "Resize Width",
+    "resizeWidthPlaceholder": "Original"
+  },
+  "privacy": {
+    "title": "Privacy Secure",
+    "description": "Processing is 100% local. Your images never leave this device."
+  },
+  "dropzone": {
+    "title": "Drop images here",
+    "description": "Drag & drop files or click to browse.",
+    "formats": "Supports JPG, PNG, WEBP, AVIF, BMP, GIF"
+  },
+  "results": {
+    "title": "Results",
+    "fileInfo": "File Info",
+    "state": "State",
+    "optimization": "Optimization",
+    "action": "Action",
+    "download": "Download",
+    "downloadAll": "Download All",
+    "clear": "Clear"
+  },
+  "status": {
+    "processing": "Processing",
+    "tuning": "Tuning...",
+    "ready": "Ready",
+    "failed": "Failed"
+  },
+  "stats": {
+    "original": "Original",
+    "total": "Total:",
+    "saved": "Saved",
+    "added": "Added"
+  },
+  "alerts": {
+    "pngTargetSize": "Target size optimization is not available for PNG (Lossless). Switched to JPEG."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "footer": {
+    "madeBy": "Made with",
+    "by": "by",
+    "forProject": "for"
+  }
+}

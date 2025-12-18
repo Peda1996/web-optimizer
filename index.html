@@ -19,19 +19,30 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><line x1="16" x2="22" y1="5" y2="5"/><line x1="19" x2="19" y1="2" y2="8"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-gray-900 leading-tight">Web Optimizer <span class="text-blue-600">Pro</span></h1>
-                    <p class="text-xs text-gray-500">Advanced Local Image Processor</p>
+                    <h1 class="text-xl font-bold text-gray-900 leading-tight"><span data-i18n="app.title">Web Optimizer Pro</span></h1>
+                    <p class="text-xs text-gray-500" data-i18n="app.subtitle">Advanced Local Image Processor</p>
                 </div>
             </div>
 
-            <div class="flex gap-2">
+            <div class="flex items-center gap-2">
+                <!-- Language Selector -->
+                <div class="relative">
+                    <select id="langSelect" class="appearance-none bg-gray-100 border border-gray-200 text-gray-700 text-sm rounded-lg px-3 py-2 pr-8 cursor-pointer hover:bg-gray-200 transition-colors focus:ring-blue-500 focus:border-blue-500">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+
                 <button id="clearAllBtn" class="hidden md:flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                    Clear List
+                    <span data-i18n="header.clearList">Clear List</span>
                 </button>
                 <button id="downloadAllBtn" disabled class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                    Download ZIP
+                    <span data-i18n="header.downloadZip">Download ZIP</span>
                 </button>
             </div>
         </div>
@@ -48,34 +59,34 @@
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="font-semibold text-gray-900 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                            Configuration
+                            <span data-i18n="settings.title">Configuration</span>
                         </h2>
                     </div>
 
                     <!-- Format -->
                     <div class="mb-5">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Output Format</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="settings.outputFormat">Output Format</label>
                         <select id="formatSelect" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
-                            <option value="image/webp" selected>WebP (Recommended)</option>
-                            <option value="image/avif">AVIF (Best Compression)</option>
-                            <option value="image/jpeg">JPEG (Universal)</option>
-                            <option value="image/png">PNG (Lossless)</option>
+                            <option value="image/webp" selected data-i18n="settings.formatWebp">WebP (Recommended)</option>
+                            <option value="image/avif" data-i18n="settings.formatAvif">AVIF (Best Compression)</option>
+                            <option value="image/jpeg" data-i18n="settings.formatJpeg">JPEG (Universal)</option>
+                            <option value="image/png" data-i18n="settings.formatPng">PNG (Lossless)</option>
                         </select>
                     </div>
 
                     <!-- Optimization Mode Toggle -->
                     <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Optimization Mode</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="settings.optimizationMode">Optimization Mode</label>
                         <div class="flex bg-gray-100 p-1 rounded-lg">
-                            <button id="modeQuality" class="flex-1 py-1.5 text-sm font-medium rounded-md bg-white text-gray-900 shadow-sm transition-all">By Quality</button>
-                            <button id="modeSize" class="flex-1 py-1.5 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900 transition-all">Target Size</button>
+                            <button id="modeQuality" class="flex-1 py-1.5 text-sm font-medium rounded-md bg-white text-gray-900 shadow-sm transition-all" data-i18n="settings.modeQuality">By Quality</button>
+                            <button id="modeSize" class="flex-1 py-1.5 text-sm font-medium rounded-md text-gray-500 hover:text-gray-900 transition-all" data-i18n="settings.modeSize">Target Size</button>
                         </div>
                     </div>
 
                     <!-- Mode: Quality -->
                     <div id="qualityControls" class="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-100">
                         <div class="flex justify-between mb-1">
-                            <label class="block text-xs font-medium text-gray-600 uppercase">Quality Level</label>
+                            <label class="block text-xs font-medium text-gray-600 uppercase" data-i18n="settings.qualityLevel">Quality Level</label>
                             <span id="qualityValue" class="text-xs text-blue-600 font-bold">80%</span>
                         </div>
                         <input id="qualityRange" type="range" min="1" max="100" value="80" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
@@ -83,23 +94,23 @@
 
                     <!-- Mode: Target Size -->
                     <div id="sizeControls" class="mb-4 hidden p-3 bg-gray-50 rounded-lg border border-gray-100">
-                        <label class="block text-xs font-medium text-gray-600 uppercase mb-2">Max File Size (KB)</label>
+                        <label class="block text-xs font-medium text-gray-600 uppercase mb-2" data-i18n="settings.maxFileSize">Max File Size (KB)</label>
                         <div class="relative">
                             <input type="number" id="targetSizeInput" value="250" class="w-full bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-12">
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                 <span class="text-gray-500 text-sm">KB</span>
                             </div>
                         </div>
-                        <p class="mt-2 text-[10px] text-gray-500">
+                        <p class="mt-2 text-[10px] text-gray-500" data-i18n="settings.targetSizeHint">
                             App calculates best quality to fit size. Processing will be slower.
                         </p>
                     </div>
 
                     <!-- Max Width -->
                     <div class="mb-2">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Resize Width</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="settings.resizeWidth">Resize Width</label>
                         <div class="relative">
-                            <input type="number" id="maxWidthInput" placeholder="Original" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                            <input type="number" id="maxWidthInput" data-i18n-placeholder="settings.resizeWidthPlaceholder" placeholder="Original" class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                 <span class="text-gray-400 text-sm">px</span>
                             </div>
@@ -111,9 +122,9 @@
                 <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4">
                     <h3 class="text-sm font-semibold text-indigo-900 mb-1 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        Privacy Secure
+                        <span data-i18n="privacy.title">Privacy Secure</span>
                     </h3>
-                    <p class="text-xs text-indigo-700 leading-relaxed">
+                    <p class="text-xs text-indigo-700 leading-relaxed" data-i18n="privacy.description">
                         Processing is 100% local. Your images never leave this device.
                     </p>
                 </div>
@@ -127,10 +138,10 @@
                     <div class="pointer-events-none transition-transform group-hover:scale-110 duration-300 mb-6 p-5 bg-blue-50 rounded-full text-blue-600 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 pointer-events-none mb-2">Drop images here</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 pointer-events-none mb-2" data-i18n="dropzone.title">Drop images here</h3>
                     <p class="text-gray-500 pointer-events-none text-sm max-w-xs mx-auto">
-                        Drag & drop files or click to browse.<br>
-                        Supports JPG, PNG, WEBP, AVIF, BMP, GIF
+                        <span data-i18n="dropzone.description">Drag & drop files or click to browse.</span><br>
+                        <span data-i18n="dropzone.formats">Supports JPG, PNG, WEBP, AVIF, BMP, GIF</span>
                     </p>
                 </div>
             </div>
@@ -140,7 +151,7 @@
         <div id="outputSection" class="hidden animate-fade-in">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-lg font-bold text-gray-900 flex items-center">
-                    Results
+                    <span data-i18n="results.title">Results</span>
                     <span id="countBadge" class="ml-2 bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full border border-gray-200">0</span>
                 </h2>
                 <div class="text-sm text-gray-500" id="totalSavedInfo"></div>
@@ -148,10 +159,10 @@
 
             <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
                 <div class="grid grid-cols-12 bg-gray-50 border-b border-gray-200 px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    <div class="col-span-6 md:col-span-5">File Info</div>
-                    <div class="col-span-3 md:col-span-2 text-center">State</div>
-                    <div class="col-span-3 md:col-span-3 text-right">Optimization</div>
-                    <div class="hidden md:block md:col-span-2 text-right">Action</div>
+                    <div class="col-span-6 md:col-span-5" data-i18n="results.fileInfo">File Info</div>
+                    <div class="col-span-3 md:col-span-2 text-center" data-i18n="results.state">State</div>
+                    <div class="col-span-3 md:col-span-3 text-right" data-i18n="results.optimization">Optimization</div>
+                    <div class="hidden md:block md:col-span-2 text-right" data-i18n="results.action">Action</div>
                 </div>
                 <div id="resultsList" class="divide-y divide-gray-100 max-h-[600px] overflow-y-auto">
                     <!-- Items will be injected here -->
@@ -160,15 +171,27 @@
 
             <div class="grid grid-cols-2 gap-3 md:hidden mt-4">
                 <button id="clearAllBtnMobile" class="flex items-center justify-center gap-2 px-4 py-3 bg-red-50 text-red-600 rounded-lg font-medium">
-                    Clear
+                    <span data-i18n="results.clear">Clear</span>
                 </button>
                  <button id="downloadAllBtnMobile" disabled class="flex items-center justify-center gap-2 px-5 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 disabled:opacity-50 transition-colors shadow-sm">
-                    Download All
+                    <span data-i18n="results.downloadAll">Download All</span>
                 </button>
             </div>
         </div>
 
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-4 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            <span data-i18n="footer.madeBy">Made with</span>
+            <span class="text-red-500 mx-1">&#10084;</span>
+            <span data-i18n="footer.by">by</span>
+            <a href="https://github.com/Peda1996" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium mx-1">Peda1996</a>
+            <span data-i18n="footer.forProject">for</span>
+            <a href="https://photogala.net" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium ml-1">photogala.net</a>
+        </div>
+    </footer>
 
     <!-- Template -->
     <template id="listItemTemplate">
@@ -189,7 +212,7 @@
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Processing
+                    <span class="status-text">Processing</span>
                 </span>
             </div>
 
@@ -200,12 +223,13 @@
 
             <div class="col-span-12 md:col-span-2 mt-3 md:mt-0 flex justify-end md:justify-end opacity-0 group-hover:opacity-100 transition-opacity">
                 <a href="#" class="download-link text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center gap-1 opacity-50 pointer-events-none transition-opacity bg-blue-50 px-3 py-1.5 rounded-md">
-                    Download
+                    <span data-i18n="results.download">Download</span>
                 </a>
             </div>
         </div>
     </template>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
